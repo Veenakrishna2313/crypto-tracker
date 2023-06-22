@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
 
 const Header = () => {
   const classes = useStyles();
-  const {currency, setCurrency } = CryptoState();
+  const { currency, setCurrency } = CryptoState();
   const history = useHistory();
 
   const handleClick = () => {
@@ -54,7 +54,12 @@ const Header = () => {
             >
               Crypto Tracker
             </Typography>
-            <Select variant="outlined" className="select-item" value={currency} onChange={(e)=>setCurrency(e.target.value)}>
+            <Select
+              variant="outlined"
+              className="select-item"
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
+            >
               <MenuItem value="USD">USD</MenuItem>
               <MenuItem value="INR">INR</MenuItem>
             </Select>
