@@ -16,14 +16,11 @@ const Carousel = () => {
 
   const [trending,setTrending]=useState([]);
   const {currency,symbol}=CryptoState();
-
  
-  console.log("Trending Coins",trending);
-
    useEffect(() => {
      let isMounted = true; 
 
-        const fetchTrendingCoins = async () => {
+       const fetchTrendingCoins = async () => {
        const { data } = await axios.get(
          TrendingCoins(currency),
          { withCredentials: false },
@@ -33,7 +30,7 @@ const Carousel = () => {
            },
          }, {mode: "cors"}
        );
-       console.log("API data",data);
+       
          if (isMounted) setTrending(data);
      };
 
