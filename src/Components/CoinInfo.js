@@ -95,7 +95,7 @@ const CoinInfo = ({ coin }) => {
           <>
             <Line
               data={{
-                labels: historicData.map((coin) => {
+                labels: historicData.map((coin)=>{
                   let date = new Date(coin[0]);
                   let time =
                     date.getHours() > 12
